@@ -1,10 +1,18 @@
 <mat-sidenav-container>
-    <mat-sidenav #sidenav opened="true">
+    <mat-sidenav #sidenav opened="false">
         <p> Sidenav </p>
     </mat-sidenav>
 
     <mat-sidenav-content>
-        <button (click)="sidenav.toggle()"> Show sidenav </button>
+        <mat-toolbar color="primary">
+            <div><button (click)="sidenav.toggle()"> Toggle sidenav </button></div>
+            <div> Logo </div>
+            <div>
+                <a routerLink="/signup"> Signup </a>
+                <a routerLink="/login"> Login </a>
+            </div>
+        </mat-toolbar>
+
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
