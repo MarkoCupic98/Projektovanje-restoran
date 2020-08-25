@@ -1,1 +1,16 @@
-<p>login works!</p>
+<section>
+    <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <mat-form-field>
+            <input type="email" matInput placeholder="E-mail adress" ngModel name="email" email required #emailInput="ngModel">
+            <mat-error *ngIf="emailInput.hasError('required')"> Field should not be empty! </mat-error>
+            <mat-error *ngIf="!emailInput.hasError('required')"> Please use the correct email format! </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input type="password" matInput placeholder="Password" ngModel name="password" required minlength="6" #passInput="ngModel">
+            <mat-error *ngIf="passInput.hasError('required')"> Field should not be empty! </mat-error>
+        </mat-form-field>
+
+        <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid"> Login </button>
+    </form>
+</section>
