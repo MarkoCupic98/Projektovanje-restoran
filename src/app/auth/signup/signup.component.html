@@ -35,5 +35,8 @@
         <mat-checkbox color="primary" ngModel name="acceptance" required>
             I accept the terms of conditions of use.
         </mat-checkbox>
+
+        <mat-label *ngIf="hasError"> {{ errorText }} </mat-label>
+        <button mat-raised-button color="primary" routerLink="/login"> Click to go to login if you already have an account. </button>
     </form>
 </section>

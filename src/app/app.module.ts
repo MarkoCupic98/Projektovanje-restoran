@@ -11,6 +11,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 
+import { UserService } from './auth/user.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,7 @@ import { LoginComponent } from './auth/login/login.component';
     FlexLayoutModule,
     FormsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
