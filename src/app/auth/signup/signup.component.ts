@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit {
     if (!this.userService.getUser(form.value.email)) {
       this.errorExists = false;
       var newUser = this.userService.registerUser(form.value.email, form.value.password, form.value.fName, form.value.lName, form.value.date);
-      this.router.navigate(['']);
+      this.router.navigate(['/login']);
     } else {
       this.errorExists = true;
       this.errorText = "User with this email already exists."
