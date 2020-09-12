@@ -10,7 +10,7 @@ import { MenuService } from './menu.service';
 })
 export class MenuComponent implements OnInit {
 
-  displayedColumns = ["name", "price", "weight", "size"];
+  displayedColumns = ["name", "size", "price", "weight"];
   menuSource = new MatTableDataSource<Menu>();
 
   constructor(private menuService : MenuService) { }
