@@ -10,9 +10,10 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
+import { MenuComponent } from './menu/menu.component';
 
 import { UserService } from './auth/user.service';
-import { MenuComponent } from './menu/menu.component';
+import { MenuService } from './menu/menu.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { MenuComponent } from './menu/menu.component';
     FlexLayoutModule,
     FormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
