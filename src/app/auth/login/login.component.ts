@@ -33,6 +33,6 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.errorExists = false;
-    this.router.navigate(['']);
+    this.router.navigate(['/menu']);
   }
 }
