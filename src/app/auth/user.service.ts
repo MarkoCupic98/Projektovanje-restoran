@@ -13,14 +13,16 @@ export interface User {
 @Injectable()
 export class UserService {
 
+    currentUser: User = UserService.dummyUserList[0];
+
     static dummyUserList: Array<User> = [
         {
             id: 1,
-            email: "test@test.com",
+            email: "test@gmail.com",
             password: "123456",
-            fName: "test",
-            lName: "ts",
-            adress: "test adres 123",
+            fName: "test1",
+            lName: "test2",
+            adress: "test adress 123",
             date: new Date("2019-05-22 17:00")
         }
     ]
@@ -37,11 +39,13 @@ export class UserService {
             }
         });
 
+        this.currentUser = foundUser;
         return foundUser;
     }
 
     getUser(userEmail: string) : User {
-        return UserService.dummyUserList.find(userToFind => userToFind.email == userEmail);
+        this.currentUser = UserService.dummyUserList.find(userToFind => userToFind.email == userEmail);
+        return this.currentUser;
     }
 
     isPasswordCorrect(userEmail: string, password: string) : boolean {
@@ -62,6 +66,7 @@ export class UserService {
 
         UserService.dummyUserList.push(user);
 
+        this.currentUser = user;
         console.log(user);
         return user;
     }

@@ -14,6 +14,7 @@ import { MenuComponent } from './menu/menu.component';
 
 import { UserService } from './auth/user.service';
 import { MenuService } from './menu/menu.service';
+import { ProfileComponent } from './auth/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MenuService } from './menu/menu.service';
     WelcomeComponent,
     SignupComponent,
     LoginComponent,
-    MenuComponent
+    MenuComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import { MenuService } from './menu/menu.service';
     FormsModule
   ],
   providers: [UserService, MenuService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ProfileComponent]
 })
 export class AppModule { }
