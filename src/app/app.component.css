@@ -17,7 +17,7 @@ a:hover, a:active {
 
 #logo {
     background-color: white;
-    border-radius: 30%;
+    border-radius: 50%;
     height: 50px;
     width: 50px;
 }
@@ -25,5 +25,4 @@ a:hover, a:active {
 #icon {
     margin-left: 13px;
     margin-top: 13px;
-    
 }
