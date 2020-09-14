@@ -6,6 +6,7 @@ export interface User {
     password: string;
     fName: string;
     lName: string;
+    adress: string;
     date: Date;
 }
 
@@ -19,6 +20,7 @@ export class UserService {
             password: "123456",
             fName: "test",
             lName: "ts",
+            adress: "test adres 123",
             date: new Date("2019-05-22 17:00")
         }
     ]
@@ -47,7 +49,7 @@ export class UserService {
             (userToFind.email == userEmail && userToFind.password == password)) != undefined;
     }
 
-    registerUser(email: string, password: string, fName: string, lName: string, date: Date) : User {
+    registerUser(email: string, password: string, fName: string, lName: string, adress: string, date: Date) : User {
         var maxId: number = 0;
         UserService.dummyUserList.forEach(user => {
             if(maxId < user.id) {
@@ -56,7 +58,7 @@ export class UserService {
         });
 
         var id = ++maxId;
-        var user: User = {id, email, password, fName, lName, date};
+        var user: User = {id, email, password, fName, lName, adress, date};
 
         UserService.dummyUserList.push(user);
 
