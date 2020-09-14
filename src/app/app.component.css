@@ -16,12 +16,14 @@ a:hover, a:active {
 }
 
 #logo {
-    height: 93%;
-    width: 10%;
+    background-color: white;
+    border-radius: 30%;
+    height: 50px;
+    width: 50px;
 }
 
-#logo img {
-    height: 100%;
-    width: auto;
-    border-radius: 40%;
+#icon {
+    margin-left: 13px;
+    margin-top: 13px;
+    
 }
