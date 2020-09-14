@@ -10,7 +10,7 @@ import { MenuService } from './menu.service';
 })
 export class MenuComponent implements OnInit, AfterViewInit {
 
-  displayedColumns = ["name", "size", "price", "weight"];
+  displayedColumns = ["name", "size", "price", "picture", "weight"];
   menuSource = new MatTableDataSource<Menu>();
 
   @ViewChild(MatSort, {static: false}) sort : MatSort;
@@ -25,6 +25,11 @@ export class MenuComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.menuSource.sort = this.sort;
     this.menuSource.paginator = this.paginator;
+  }
+
+  justFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.menuSource.filter = filterValue.trim().toLowerCase();
   }
 
 }

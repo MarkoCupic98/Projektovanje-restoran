@@ -1,3 +1,10 @@
+<div fxLayoutAlign="center center">
+    <mat-form-field fxFlex="20%">
+        <mat-label> Filter </mat-label>
+        <input matInput (keyup)="justFilter($event)" placeholder="Search for your favorite food">
+    </mat-form-field>
+</div>
+
 <mat-table [dataSource]="menuSource" matSort>
     <ng-container matColumnDef="name">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
@@ -12,6 +19,11 @@
     <ng-container matColumnDef="price">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Price </mat-header-cell>
         <mat-cell *matCellDef="let element"> {{ element.price }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="picture">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Picture </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="picture"> <img src="{{ element.picture }}"> </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="weight">
