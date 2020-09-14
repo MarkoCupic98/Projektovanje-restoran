@@ -14,3 +14,14 @@ a {
 a:hover, a:active {
     color: gray;
 }
+
+#logo {
+    height: 93%;
+    width: 10%;
+}
+
+#logo img {
+    height: 100%;
+    width: auto;
+    border-radius: 40%;
+}
