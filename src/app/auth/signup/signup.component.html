@@ -7,7 +7,8 @@
         </mat-form-field>
 
         <mat-form-field>
-            <input type="password" matInput placeholder="Password" ngModel name="password" required minlength="6" #passInput="ngModel">
+            <input type="password" matInput placeholder="Password" ngModel name="password" [type]="hide ? 'password' : 'text'" required minlength="6" #passInput="ngModel">
+            <mat-icon matSuffix (click)="hide = !hide"> {{ hide ? 'visibility_off' : 'visibility' }} </mat-icon>
             <mat-hint align="end"> {{ passInput.value?.length }} / 6 </mat-hint>
             <mat-error *ngIf="passInput.hasError('required')"> Field should not be empty! </mat-error>
             <mat-error *ngIf="!passInput.hasError('required')"> Please use 6 or more characters! </mat-error>

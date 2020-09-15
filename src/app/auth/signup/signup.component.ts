@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
+  hide = true;
   errorExists = false;
   errorText = "";
   constructor(private userService : UserService, private router : Router) {}
