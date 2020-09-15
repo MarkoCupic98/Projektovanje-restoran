@@ -1,6 +1,8 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav opened="false">
-        <mat-nav-list>
+        <mat-nav-list fxLayoutGap="6px">
+            <mat-list-item> <mat-icon color="primary"> face </mat-icon> {{ this.userService.currentUser.fName }} </mat-list-item>
+            <mat-list-item routerLink="/menu" (click)="sidenav.close()"> <mat-icon> menu_book </mat-icon> Menu </mat-list-item>
             <mat-list-item routerLink="/signup" (click)="sidenav.close()"> <mat-icon> assignment_ind </mat-icon> Signup </mat-list-item>
             <mat-list-item routerLink="/login" (click)="sidenav.close()">  <mat-icon> assignment </mat-icon> Login </mat-list-item>
             <mat-list-item routerLink="/" (click)="sidenav.close()"> <mat-icon> exit_to_app </mat-icon> Logout </mat-list-item>
@@ -9,18 +11,20 @@
 
     <mat-sidenav-content>
         <mat-toolbar color="primary">
-            <div fxHide.gt-xs>
-                <button (click)="sidenav.toggle()"> <mat-icon> menu </mat-icon> </button>
+            <div fxHide.gt-xs id="sidenav">
+                <button mat-raised-button (click)="sidenav.toggle()"> <mat-icon> menu </mat-icon> </button>
             </div>
-            <div id="logo"> <mat-icon id="icon"> local_dining </mat-icon> </div>
-            <div fxFlex fxLayoutAlign="end" fxLayoutGap="15px" fxHide.xs>
-                <button mat-raised-button color="warn" (click)="openProfile(this.userService.currentUser.id)">
-                    {{ this.userService.currentUser.email }}
-                </button>
-                <a routerLink="/"> Home </a>
+
+            <div id="logo"> <a routerLink="/"> <mat-icon id="icon"> local_dining </mat-icon> </a> </div>
+
+            <div fxFlex fxLayoutAlign="end" fxLayoutGap="15px" fxHide.xs *ngIf="this.userService.currentUser != null">
                 <a routerLink="menu"> Menu </a>
                 <a routerLink="/signup"> Signup </a>
                 <a routerLink="/login"> Login </a>
+
+                <button mat-raised-button color="accent" (click)="openProfile(this.userService.currentUser.id)">
+                    {{ this.userService.currentUser.fName }}
+                </button>
             </div>
         </mat-toolbar>
 
