@@ -44,8 +44,8 @@ export class UserService {
     }
 
     getUser(userEmail: string) : User {
-        this.currentUser = UserService.dummyUserList.find(userToFind => userToFind.email == userEmail);
-        return this.currentUser;
+       this.currentUser = UserService.dummyUserList.find(userToFind => userToFind.email == userEmail);
+       return this.currentUser;
     }
 
     isPasswordCorrect(userEmail: string, password: string) : boolean {

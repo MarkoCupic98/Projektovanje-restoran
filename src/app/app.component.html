@@ -14,11 +14,13 @@
             </div>
             <div id="logo"> <mat-icon id="icon"> local_dining </mat-icon> </div>
             <div fxFlex fxLayoutAlign="end" fxLayoutGap="15px" fxHide.xs>
+                <button mat-raised-button color="warn" (click)="openProfile(this.userService.currentUser.id)">
+                    {{ this.userService.currentUser.email }}
+                </button>
                 <a routerLink="/"> Home </a>
                 <a routerLink="menu"> Menu </a>
                 <a routerLink="/signup"> Signup </a>
                 <a routerLink="/login"> Login </a>
-                <button mat-raised-button color="warn" (click)="openProfile(this.userService.currentUser.id)"> {{ this.userService.currentUser.email }} </button>
             </div>
         </mat-toolbar>
 
