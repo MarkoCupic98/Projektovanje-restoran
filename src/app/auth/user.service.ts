@@ -8,6 +8,7 @@ export interface User {
     lName: string;
     adress: string;
     date: Date;
+    admin: boolean;
 }
 
 @Injectable()
@@ -23,7 +24,8 @@ export class UserService {
             fName: "test1",
             lName: "test2",
             adress: "test adress 123",
-            date: new Date("2019-05-22 17:00")
+            date: new Date("2019-05-22 17:00"),
+            admin: false
         }
     ]
 
@@ -53,7 +55,7 @@ export class UserService {
             (userToFind.email == userEmail && userToFind.password == password)) != undefined;
     }
 
-    registerUser(email: string, password: string, fName: string, lName: string, adress: string, date: Date) : User {
+    registerUser(email: string, password: string, fName: string, lName: string, adress: string, date: Date, admin: boolean) : User {
         var maxId: number = 0;
         UserService.dummyUserList.forEach(user => {
             if(maxId < user.id) {
@@ -62,7 +64,7 @@ export class UserService {
         });
 
         var id = ++maxId;
-        var user: User = {id, email, password, fName, lName, adress, date};
+        var user: User = {id, email, password, fName, lName, adress, date, admin};
 
         UserService.dummyUserList.push(user);
 
