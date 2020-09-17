@@ -31,6 +31,13 @@
         <mat-cell *matCellDef="let element"> {{ element.weight }} </mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="order">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Order </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <button mat-raised-button color="primary"> <mat-icon> bookmark_border </mat-icon> </button>
+        </mat-cell>
+    </ng-container>
+
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let rows; columns: displayedColumns;"></mat-row>
 </mat-table>

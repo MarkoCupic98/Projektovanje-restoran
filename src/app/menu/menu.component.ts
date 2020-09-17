@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { UserService } from '../auth/user.service';
 import { Menu } from './menu.model';
 import { MenuService } from './menu.service';
 
@@ -10,7 +11,7 @@ import { MenuService } from './menu.service';
 })
 export class MenuComponent implements OnInit, AfterViewInit {
 
-  displayedColumns = ["name", "size", "price", "picture", "weight"];
+  displayedColumns = ["name", "size", "price", "picture", "weight", "order"];
   menuSource = new MatTableDataSource<Menu>();
 
   @ViewChild(MatSort, {static: false}) sort : MatSort;
