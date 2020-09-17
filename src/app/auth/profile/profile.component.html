@@ -1,11 +1,13 @@
 <div fxLayoutAlign="space-between">
     <button mat-raised-button color="primary" *ngIf="this.profileForInput.id == this.userService.currentUser.id"
     (click)="this.isEditing = !this.isEditing">
-        <mat-icon matListIcon> edit </mat-icon>
+        <mat-icon matListIcon> edit </mat-icon> Edit
     </button>
 
+    <!--<button mat-raised-button color="primary" (click)="logOut()"> <mat-icon matListIcon> exit_to_app </mat-icon>  Logout </button>-->
+
     <button mat-raised-button color="primary" [mat-dialog-close]="true">
-        <mat-icon matListIcon> close </mat-icon>
+        <mat-icon matListIcon> close </mat-icon> Close
     </button>
 </div>
 
@@ -30,15 +32,14 @@
             </div>
 
         <!-- Password -->
-            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1vw">
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1vw" *ngIf="this.isEditing">
                 <mat-icon> lock </mat-icon>
-                <div fxLayout="column"  *ngIf="!this.isEditing">
-                    <span> {{ this.profileForInput.password }} </span>
-                </div>
 
-                <mat-form-field *ngIf="this.isEditing" hintLabel="Minimum 6 characters">
+                <mat-form-field hintLabel="Minimum 6 characters">
                     <input matInput type="password" placeholder="Your password" ngModel name="password" minlength="6"
                     [(ngModel)]="this.profileForInput.password" password required #passwordInput="ngModel">
+
+                    <mat-icon matSuffix (click)="hide = !hide"> {{ !hide ? 'visibility_off' : 'visibility'}} </mat-icon>
 
                     <mat-hint align="end"> {{ passwordInput.value?.length }} / 6 </mat-hint>
                 </mat-form-field>

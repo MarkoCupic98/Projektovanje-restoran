@@ -19,12 +19,14 @@
 
             <div fxFlex fxLayoutAlign="end" fxLayoutGap="15px" fxHide.xs *ngIf="this.userService.currentUser != null">
                 <a routerLink="menu"> Menu </a>
-                <a routerLink="/signup"> Signup </a>
-                <a routerLink="/login"> Login </a>
+                <a *ngIf="!loggedIn" routerLink="/signup"> Signup </a>
+                <a *ngIf="!loggedIn" routerLink="/login"> Login </a>
 
-                <button mat-raised-button color="accent" (click)="openProfile(this.userService.currentUser.id)">
-                    {{ this.userService.currentUser.fName }}
+                <button *ngIf="!loggedIn" mat-raised-button color="accent" (click)="openProfile(this.userService.currentUser.id)">
+                    {{ this.userService.currentUser.email }}
                 </button>
+
+                <a  *ngIf="loggedIn" routerLink="/" (click)="signOut()"> Logout </a>
             </div>
         </mat-toolbar>
 

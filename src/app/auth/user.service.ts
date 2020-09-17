@@ -26,8 +26,19 @@ export class UserService {
             adress: "test adress 123",
             date: new Date("2019-05-22 17:00"),
             admin: false
+        },
+
+        {
+            id: 2,
+            email: "admin@gmail.com",
+            password: "admin123",
+            fName: "Admin",
+            lName: "/",
+            adress: "/",
+            date: new Date("1998-05-19 10:45"),
+            admin: true
         }
-    ]
+    ];
 
     getUserName(user: User) : string {
         return user.email;

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { ProfileComponent } from './auth/profile/profile.component';
 import { UserService } from './auth/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent {
 
   profileOpened : boolean = false;
 
-  constructor(private userService: UserService, private dialog: MatDialog) {}
+  constructor(private userService: UserService, private dialog: MatDialog, private router : Router) {}
 
   openProfile(userId: number) {
     this.profileOpened = true;
@@ -27,5 +28,15 @@ export class AppComponent {
     profileDialog.afterClosed().subscribe(result => {
       this.profileOpened = false;
     })
+  }
+
+  loggedIn : boolean = false;
+
+  setLoggedIn(value: boolean) {
+    this.loggedIn = value;
+  }
+
+  signOut() {
+    this.loggedIn = false;
   }
 }
