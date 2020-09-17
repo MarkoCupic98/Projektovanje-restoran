@@ -1,8 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material';
-import { AppComponent } from 'src/app/app.component';
-import { SignupComponent } from '../signup/signup.component';
 import { User, UserService } from '../user.service';
 
 @Component({
@@ -15,7 +13,7 @@ export class ProfileComponent implements OnInit {
   isEditing: boolean = false;
   profileForInput: User;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private userService: UserService, private AppComponent: AppComponent) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private userService: UserService) { }
 
   ngOnInit() {
     this.profileForInput = {

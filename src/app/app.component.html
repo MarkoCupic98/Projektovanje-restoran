@@ -22,7 +22,7 @@
                 <a *ngIf="!loggedIn" routerLink="/signup"> Signup </a>
                 <a *ngIf="!loggedIn" routerLink="/login"> Login </a>
 
-                <button *ngIf="!loggedIn" mat-raised-button color="accent" (click)="openProfile(this.userService.currentUser.id)">
+                <button *ngIf="loggedIn" mat-raised-button color="accent" (click)="openProfile(this.userService.currentUser.id)">
                     {{ this.userService.currentUser.email }}
                 </button>
 
