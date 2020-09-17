@@ -18,7 +18,7 @@
             <div id="logo"> <a routerLink="/"> <mat-icon id="icon"> local_dining </mat-icon> </a> </div>
 
             <div fxFlex fxLayoutAlign="end" fxLayoutGap="15px" fxHide.xs *ngIf="this.userService.currentUser != null">
-                <button *ngIf="loggedIn" mat-raised-button color="primary" (click)="openProfile(this.userService.currentUser.id)">
+                <button *ngIf="loggedIn" mat-raised-button color="white" (click)="openProfile(this.userService.currentUser.id)">
                     {{ this.userService.currentUser.email }}
                 </button>
 
