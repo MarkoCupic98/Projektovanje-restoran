@@ -32,6 +32,9 @@ export class ProfileComponent implements OnInit {
     this.data.user.email = this.profileForInput.email;
     this.data.user.password = this.profileForInput.password;
     this.data.user.adress = this.profileForInput.adress;
+    this.data.user.fName = this.profileForInput.fName;
+    this.data.user.lName = this.profileForInput.lName;
+    this.data.user.date = this.profileForInput.date;
 
     console.log(this.data.user);
     console.log(UserService.dummyUserList);

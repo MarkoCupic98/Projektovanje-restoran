@@ -1,11 +1,11 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav opened="false">
         <mat-nav-list fxLayoutGap="6px">
-            <mat-list-item> <mat-icon color="primary"> face </mat-icon> {{ this.userService.currentUser.fName }} </mat-list-item>
-            <mat-list-item routerLink="/menu" (click)="sidenav.close()"> <mat-icon> menu_book </mat-icon> Menu </mat-list-item>
-            <mat-list-item routerLink="/signup" (click)="sidenav.close()"> <mat-icon> assignment_ind </mat-icon> Signup </mat-list-item>
-            <mat-list-item routerLink="/login" (click)="sidenav.close()">  <mat-icon> assignment </mat-icon> Login </mat-list-item>
-            <mat-list-item routerLink="/" (click)="sidenav.close()"> <mat-icon> exit_to_app </mat-icon> Logout </mat-list-item>
+            <mat-list-item *ngIf="loggedIn"> <mat-icon color="primary"> face </mat-icon> {{ this.userService.currentUser.email }} </mat-list-item>
+            <mat-list-item  routerLink="/menu" (click)="sidenav.close()"> <mat-icon> menu_book </mat-icon> Menu </mat-list-item>
+            <mat-list-item *ngIf="!loggedIn" routerLink="/signup" (click)="sidenav.close()"> <mat-icon> assignment_ind </mat-icon> Signup </mat-list-item>
+            <mat-list-item *ngIf="!loggedIn" routerLink="/login" (click)="sidenav.close()">  <mat-icon> assignment </mat-icon> Login </mat-list-item>
+            <mat-list-item *ngIf="loggedIn" routerLink="/" (click)="sidenav.close(); signOut()"> <mat-icon> exit_to_app </mat-icon> Logout </mat-list-item>
         </mat-nav-list>
     </mat-sidenav>
 
@@ -18,14 +18,13 @@
             <div id="logo"> <a routerLink="/"> <mat-icon id="icon"> local_dining </mat-icon> </a> </div>
 
             <div fxFlex fxLayoutAlign="end" fxLayoutGap="15px" fxHide.xs *ngIf="this.userService.currentUser != null">
-                <a routerLink="menu"> Menu </a>
-                <a *ngIf="!loggedIn" routerLink="/signup"> Signup </a>
-                <a *ngIf="!loggedIn" routerLink="/login"> Login </a>
-
-                <button *ngIf="loggedIn" mat-raised-button color="accent" (click)="openProfile(this.userService.currentUser.id)">
+                <button *ngIf="loggedIn" mat-raised-button color="primary" (click)="openProfile(this.userService.currentUser.id)">
                     {{ this.userService.currentUser.email }}
                 </button>
 
+                <a routerLink="menu"> Menu </a>
+                <a *ngIf="!loggedIn" routerLink="/signup"> Signup </a>
+                <a *ngIf="!loggedIn" routerLink="/login"> Login </a>
                 <a  *ngIf="loggedIn" routerLink="/" (click)="signOut()"> Logout </a>
             </div>
         </mat-toolbar>

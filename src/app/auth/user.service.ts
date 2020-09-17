@@ -24,7 +24,7 @@ export class UserService {
             fName: "test1",
             lName: "test2",
             adress: "test adress 123",
-            date: new Date("2019-05-22 17:00"),
+            date: new Date("2019-05-22 17:022"),
             admin: false
         },
 

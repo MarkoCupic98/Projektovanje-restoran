@@ -43,6 +43,6 @@
         </mat-checkbox>
 
         <mat-label *ngIf="hasError"> {{ errorText }} </mat-label>
-        <button mat-raised-button color="primary" routerLink="/login"> Click to login if you already have an account. </button>
+        <button mat-raised-button color="primary" routerLink="/login" [disabled]="f.valid"> Click to login if you already have an account. </button>
     </form>
 </section>
