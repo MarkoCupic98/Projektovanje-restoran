@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
+import { MatDialog, MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { UserService } from '../auth/user.service';
+import { PaymentComponent } from '../payment/payment.component';
 import { Menu } from './menu.model';
 import { MenuService } from './menu.service';
 
@@ -17,7 +18,7 @@ export class MenuComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort, {static: false}) sort : MatSort;
   @ViewChild(MatPaginator, {static: false}) paginator : MatPaginator;
 
-  constructor(private menuService : MenuService) { }
+  constructor(private menuService : MenuService, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.menuSource.data = this.menuService.getMenu();
@@ -31,6 +32,10 @@ export class MenuComponent implements OnInit, AfterViewInit {
   justFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.menuSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  onPay() {
+    const dialogRef = this.dialog.open(PaymentComponent);
   }
 
 }

@@ -23,7 +23,7 @@
                 </button>
 
                 <a routerLink="/"> Home </a>
-                <a *ngIf="loggedIn" routerLink="/menu"> Menu </a>
+                <a *ngIf="loggedIn" routerLink="/menu" (click)="onStay()"> Menu </a>
                 <a *ngIf="!loggedIn" routerLink="/signup"> Signup </a>
                 <a *ngIf="!loggedIn" routerLink="/login"> Login </a>
                 <a *ngIf="loggedIn" routerLink="/" (click)="signOut()"> Logout </a>

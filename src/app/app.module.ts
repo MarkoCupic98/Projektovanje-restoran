@@ -16,6 +16,7 @@ import { UserService } from './auth/user.service';
 import { MenuService } from './menu/menu.service';
 import { ProfileComponent } from './auth/profile/profile.component';
 import { CartComponent } from './cart/cart.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CartComponent } from './cart/cart.component';
     LoginComponent,
     MenuComponent,
     ProfileComponent,
-    CartComponent
+    CartComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +39,6 @@ import { CartComponent } from './cart/cart.component';
   ],
   providers: [UserService, MenuService],
   bootstrap: [AppComponent],
-  entryComponents: [ProfileComponent]
+  entryComponents: [ProfileComponent, PaymentComponent]
 })
 export class AppModule { }

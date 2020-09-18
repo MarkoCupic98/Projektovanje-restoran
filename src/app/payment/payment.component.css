@@ -1,0 +1,43 @@
+#wrapper {
+    width: 500px;
+    height: 250px;
+}
+
+.dugme1 {
+    display: inline;
+    margin-right: 240px;
+}
+
+.dugme2 {
+    display: inline;
+}
+
+.text1 {
+    display: inline;
+    margin-right: 90px;
+}
+
+.text2 {
+    display: inline;
+}
+
+.box1 {
+    margin-top: 30px;
+}
+
+.box2 {
+    margin-top: 80px;
+}
+
+.box3 {
+    margin-top: 70px;
+}
+
+.icon1 {
+    display: inline;
+    margin-right: 300px;
+}
+
+.icon2 {
+    display: inline;
+}

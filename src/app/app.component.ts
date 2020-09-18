@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material';
 import { ProfileComponent } from './auth/profile/profile.component';
 import { UserService } from './auth/user.service';
 import { Router } from '@angular/router';
+import { CartComponent } from './cart/cart.component';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +16,7 @@ export class AppComponent {
 
   profileOpened : boolean = false;
 
-  constructor(private userService: UserService, private dialog: MatDialog, private router : Router) {}
+  constructor(private userService: UserService, private dialog: MatDialog, private router : Router, private cart: CartComponent) {}
 
   openProfile(userId: number) {
     this.profileOpened = true;
@@ -38,5 +40,9 @@ export class AppComponent {
 
   signOut() {
     this.loggedIn = false;
+  }
+
+  onStay() {
+    this.cart.onStop();
   }
 }
