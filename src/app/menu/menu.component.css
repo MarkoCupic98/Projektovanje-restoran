@@ -2,3 +2,7 @@
     width: 100px;
     height: 80px;
 }
+
+mat-icon {
+    color: white;
+}
