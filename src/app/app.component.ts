@@ -12,10 +12,12 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'restoran';
 
+  // postavlja dijalog vrednost kao false(nije otvoren u ovom slucaju)
   profileOpened : boolean = false;
 
   constructor(private userService: UserService, private dialog: MatDialog, private router : Router) {}
 
+  // otvara profil kao dijalog i uzima korisnika po id-ju
   openProfile(userId: number) {
     this.profileOpened = true;
 
@@ -30,12 +32,15 @@ export class AppComponent {
     })
   }
 
+  // postavlja vrednost login-a na false na pocetku (pre logovanja korisnika)
   loggedIn : boolean = false;
 
+  //prijavljuje korisnika
   setLoggedIn(value: boolean) {
     this.loggedIn = value;
   }
 
+  // odjavljuje korisnika
   signOut() {
     this.loggedIn = false;
   }
