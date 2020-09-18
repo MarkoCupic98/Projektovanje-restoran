@@ -37,6 +37,6 @@ import { CartComponent } from './cart/cart.component';
   ],
   providers: [UserService, MenuService],
   bootstrap: [AppComponent],
-  entryComponents: [ProfileComponent, CartComponent]
+  entryComponents: [ProfileComponent]
 })
 export class AppModule { }

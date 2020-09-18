@@ -39,7 +39,7 @@
                     <input matInput type="password" placeholder="Password" ngModel name="password" minlength="6"
                     [(ngModel)]="this.profileForInput.password" password required #passwordInput="ngModel" [type]="hide ? 'password' : 'text'">
 
-                    <mat-icon matSuffix (click)="hide = !hide"> {{ !hide ? 'visibility_off' : 'visibility'}} </mat-icon>
+                    <mat-icon matSuffix (click)="hide = !hide"> {{ hide ? 'visibility_off' : 'visibility' }} </mat-icon>
 
                     <mat-hint align="end"> {{ passwordInput.value?.length }} / 6 </mat-hint>
                 </mat-form-field>

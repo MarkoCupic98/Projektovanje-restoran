@@ -1,0 +1,15 @@
+section {
+    padding: 30px;
+    margin-top: 130px;
+}
+ .dugme1 {
+     display: inline;
+ }
+
+ .dugme2 {
+     display: inline;
+ }
+
+ mat-error {
+     color: orange;
+ }
