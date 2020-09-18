@@ -42,7 +42,4 @@ export class AppComponent {
     this.loggedIn = false;
   }
 
-  onStay() {
-    this.cart.onStop();
-  }
 }
