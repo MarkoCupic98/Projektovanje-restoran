@@ -18,7 +18,7 @@
 
     <ng-container matColumnDef="price">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Price </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{ element.price }} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{ element.price }} $ </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="picture">
@@ -34,7 +34,7 @@
     <ng-container matColumnDef="order">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Order </mat-header-cell>
         <mat-cell *matCellDef="let element">
-            <button (click)="onPay()" mat-raised-button color="primary" > <mat-icon> bookmark_border </mat-icon> </button>
+            <button (click)="onPay()" mat-raised-button color="primary" > <mat-icon> shopping_cart </mat-icon> </button>
         </mat-cell>
     </ng-container>
 
