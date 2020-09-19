@@ -17,6 +17,7 @@ import { MenuService } from './menu/menu.service';
 import { ProfileComponent } from './auth/profile/profile.component';
 import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
+import { CreditComponent } from './credit/credit.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PaymentComponent } from './payment/payment.component';
     MenuComponent,
     ProfileComponent,
     CartComponent,
-    PaymentComponent
+    PaymentComponent,
+    CreditComponent
   ],
   imports: [
     BrowserModule,

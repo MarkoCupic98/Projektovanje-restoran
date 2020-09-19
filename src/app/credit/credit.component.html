@@ -1,0 +1,30 @@
+<div id="bgpic"> <img src="https://w.wallhaven.cc/full/1j/wallhaven-1jwegv.jpg"> </div>
+
+<div class="wrapper">
+    <form fxLayoutAlign="center" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div id="number">
+            <h4> Card number </h4>
+            <input type="text" minlength="4" maxlength="4" placeholder="0000" required>
+            <input type="text" minlength="4" maxlength="4" placeholder="0000" required>
+            <input type="text" minlength="4" maxlength="4" placeholder="0000" required>
+            <input type="text" minlength="4" maxlength="4" placeholder="0000" ngModel name="number" number required #numberInput="ngModel">
+        </div>
+    </form>
+    
+    <form fxLayoutAlign="center" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div id="name">
+            <h4> Card holder's name </h4>
+            <input type="text" placeholder="Name" ngModel name="name" name required #nameInput="ngModel">
+        </div>
+    </form>
+    
+    <form fxLayoutAlign="center" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div id="date">
+            <h4> Expiration date </h4>
+            <input type="text" minlength="2" maxlength="2" placeholder="00" required>
+            <input type="text" minlength="2" maxlength="2" placeholder="00" ngModel name="date" date required #dateInput="ngModel">
+        </div>
+    </form>
+
+    <button mat-raised-button color="primary" routerLink="/cart" style="color: white" [disabled]="f.invalid"> Finish your order </button>
+</div>

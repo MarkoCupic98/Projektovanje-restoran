@@ -1,0 +1,49 @@
+#bgpic {
+    width: 100%; 
+    height: 670px;
+    margin-top: 10px;
+    position: relative;
+}
+
+#bgpic img {
+    width: 100%;
+    height: inherit;
+}
+
+input {
+    width: 60px;
+    margin-right: 7px;
+}
+
+#name input{
+    width: 210px;
+}
+
+.wrapper {
+    height: 300px;
+    margin-top: 30px;
+    padding: 70px;
+    position: absolute;
+    top: 80px;
+    left: 500px;
+}
+
+#number {
+    width: 400px;
+}
+
+#name {
+    width: 400px;
+}
+
+#date {
+    width: 400px;
+}
+
+form {
+   height: 90px; 
+}
+
+button {
+    margin-top: 30px;
+}
