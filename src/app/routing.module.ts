@@ -7,6 +7,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { CartComponent } from './cart/cart.component';
 import { CreditComponent } from './credit/credit.component';
+import { FinishComponent } from './finish/finish.component';
 
 const rute: Routes = [
     {path : '', component: WelcomeComponent},
@@ -14,7 +15,8 @@ const rute: Routes = [
     {path : 'login', component: LoginComponent},
     {path: 'menu', component: MenuComponent},
     {path: 'cart', component: CartComponent},
-    {path: 'credit', component: CreditComponent}
+    {path: 'credit', component: CreditComponent},
+    {path: 'finish', component: FinishComponent}
 ];
 
 @NgModule ({

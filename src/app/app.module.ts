@@ -18,6 +18,7 @@ import { ProfileComponent } from './auth/profile/profile.component';
 import { CartComponent } from './cart/cart.component';
 import { PaymentComponent } from './payment/payment.component';
 import { CreditComponent } from './credit/credit.component';
+import { FinishComponent } from './finish/finish.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CreditComponent } from './credit/credit.component';
     ProfileComponent,
     CartComponent,
     PaymentComponent,
-    CreditComponent
+    CreditComponent,
+    FinishComponent
   ],
   imports: [
     BrowserModule,

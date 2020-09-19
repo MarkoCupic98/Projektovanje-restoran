@@ -21,7 +21,7 @@ export class CartComponent implements OnInit {
       this.progress += 15;
       if(this.progress >= 100) {
         clearInterval(this.timer);
-        this.router.navigate(['/']);
+        this.router.navigate(['/finish']);
       } 
 
     }, 1000);
