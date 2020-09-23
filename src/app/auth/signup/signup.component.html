@@ -42,7 +42,7 @@
             I accept the terms of conditions of use.
         </mat-checkbox>
 
-        <mat-label *ngIf="hasError"> {{ errorText }} </mat-label>
+        <mat-label id="error" *ngIf="errorExists"> {{ errorText }} </mat-label>
         <button mat-raised-button color="primary" routerLink="/login" [disabled]="f.valid"> Click to login if you already have an account. </button>
     </form>
 </section>
